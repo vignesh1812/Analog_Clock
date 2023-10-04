@@ -1,0 +1,99 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+body{
+  background-color: #494b4e;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.analog{
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border: 10px ridge red;
+  border-radius: 50%;
+  position: relative;
+}
+.analog::after{
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+}
+.analog::before{
+  content:'Analog Clock';
+  color: rgb(255, 0, 0);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 30px;
+}
+.num{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: red;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  --rotate:0;
+  transform: rotate(var(--rotate));
+  
+}
+.nums-1 { --rotate:30deg;}
+.nums-2 { --rotate:60deg;}
+.nums-3 { left:48%;top: 45%;}
+.nums-4 {left:40%;top: 70%;}
+.nums-5 { left:25%;top: 86%;}
+.nums-6 {left: 0%;top: 93%;}
+.nums-7 {right:25%;top: 86%; }
+.nums-8 { --rotate:240deg;}
+.nums-9 { right:47%;top: 45%;}
+.nums-10{ --rotate:300deg;}
+.nums-11{ --rotate:330deg;}
+
+.line{
+  width: 10px;
+  height: 40%;
+  background-color: red;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translatex(-50%) rotate(calc(var(--rotation)*1deg) );
+  border-top-left-radius:50% ;
+  border-top-right-radius:50% ;
+  transform-origin:bottom ;
+  --rotation:0;
+}
+.sec{
+  background-color: red;
+  width: 4px;
+  height: 45%;
+ 
+}
+.min{
+  background-color: black;
+  width: 8px;
+  height: 36%;
+
+}
+.hrs{
+  background-color: black;
+  width: 10px;
+  height: 30%;
+ 
+}
